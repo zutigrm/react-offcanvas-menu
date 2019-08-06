@@ -1,0 +1,83 @@
+@mixin transform($method) {
+	-webkit-transform: $method;
+	-moz-transform: $method;
+	transform: $method;
+}
+
+@mixin translate($params...) {
+	@include transform(translate($params));
+}
+
+@mixin translateX($value) {
+	@include translate($value, 0);
+}
+
+@mixin translateY($value) {
+	@include translate(0, $value);
+}
+
+@mixin rotate($value) {
+	@include transform(rotate($value));
+}
+
+@mixin transition($params...) {
+	-webkit-transition: $params;
+	-moz-transition: $params;
+	transition: $params;
+}
+
+@mixin absolute($top, $left: auto, $right: auto, $width: auto, $height: auto) {
+	position: absolute;
+	@if $top {
+		top: $top;
+	}
+	@if $left {
+		left: $left;
+	}
+	@if $right {
+		right: $right;
+	}
+	@if $width {
+		width: $width;
+	}
+	@if $height {
+		height: $height;
+	}
+}
+
+@mixin absoluteTopFull() {
+	@include abolute(0, 0, auto, 100%, 100%);
+}
+
+@mixin position($top, $left, $right, $bottom) {
+	@if $top {
+		top: $top;
+	}
+	@if $left {
+		left: $left;
+	}
+	@if $right {
+		right: $right;
+	}
+}
+
+@mixin positionTopLeft() {
+	@include position(0, 0, auto, auto);
+}
+
+@mixin positionTopRight() {
+	@include position(0, auto, 0, auto);
+}
+
+@mixin flex($justify: center, $align: center, $direction: column) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin ulReset($padding: 0, $margin: 0) {
+	padding: $padding;
+	margin: $margin;
+	list-style: none;
+}

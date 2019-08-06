@@ -1,0 +1,29 @@
+$menuWidth: 320px;
+$menuBackground: #282c34;
+$menuItemColor: #eee;
+$menuActiveColor: #fff;
+$menuItemFonSize: 1.3em;
+$submenuFontSize: 1.1em;
+
+$generalColor: $menuItemColor;
+
+// submenu
+$arrowWidth: 22px;
+$submenuBg: #444;
+
+// hamburger icon
+$hamburgerWidth: 42px;
+$hamburgerHeight: 35px;
+$hamburgerPadding: 3px;
+$hamburgerBorderW: 3px;
+$hamburgerColor: #333;
+$hamburgerHoverColor: rgb(32, 214, 32);
+
+// light skin
+$lightMenuBackground: #fff;
+$lightMenuItemColor: #444;
+$lightHamburgerColor: #fff;
+$lightMenuActiveColor: #000;
+$lightSubmenuBg: #eee; 
+$lightGeneralColor: $lightMenuItemColor;
+$lightHamburgerHoverColor: #eee;

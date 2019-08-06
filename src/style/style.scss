@@ -1,0 +1,265 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+body {
+	/*=== Used for push effect === */
+	@include transition(padding 0.3s ease-out);
+}
+
+.eom-offcanvas {
+	position: fixed;
+	@include positionTopLeft();
+	width: $menuWidth;
+	height: 100%;
+	background: $menuBackground;
+	color: $generalColor;
+	@include translateX(-100%);
+	@include transition(transform .3s ease-out);
+	z-index: 9999;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	/* ==== Offcanvas Opened - active state ==== */
+
+	&.active {
+		@include translateX(0);
+
+		.eom-hamburger-wrap {
+		
+			span {
+				position: absolute;
+				transform-origin: 0 0;
+
+
+				&:first-child {
+					top: calc(50% - 3px);
+					left: 50%;
+					@include transform(rotate(45deg) translate(-50%));
+				}
+
+				&:nth-child(2) {
+					opacity: 0;
+				}
+
+				&:last-child {
+					top: calc(50% - 3px);
+					left: calc(50% - 2px);
+					@include transform(rotate(-45deg) translate(-50%));
+				}
+			}
+		}
+	}
+
+	/* ==== Inner Container ==== */
+
+	.menu-overflow {
+		@include flex(left, flex-start);
+		height: 100vh;
+		padding: 2em 1.5em 1em;
+		overflow-y: auto;
+
+		ul {
+			@include ulReset();
+			text-align: left;
+		}
+	}
+
+	.eom-header,
+	.eom-footer {
+		width: 100%;
+	}
+
+	/* ==== Hamburger Icon ==== */
+
+	.eom-hamburger-wrap {
+		@include absolute(10px, auto, -10px);
+		width: $hamburgerWidth;
+		height: $hamburgerHeight;
+		padding: $hamburgerPadding;
+		border: $hamburgerBorderW solid $hamburgerColor;
+		border-radius: 3px;
+		@include translateX(100%);	
+		@include transition(border-color .3s);
+		
+		&:hover {
+			border-color: $hamburgerHoverColor;	
+			
+			span {
+				border-color:$hamburgerHoverColor;
+			}
+		}
+
+		.eom-hamburger {
+			position: relative;
+			@include flex();
+			width: 100;
+			height: 100%;
+		}
+
+		span {
+			display: block;
+			width: calc(100% - #{$hamburgerPadding});
+			border-top: $hamburgerBorderW solid $hamburgerColor;
+			flex: 1;	
+			margin: 2px 0;		
+			@include transition(transform 0.5s, opacity .3s, border-color 0.3s);
+		}
+	}
+
+	/* ==== Main Menu ==== */
+
+	.eom-menu-wrap {
+		position: relative;
+		flex: 2;
+		width: 100%;
+		text-align: left;
+
+		.eom-menu {
+			@include ulReset();
+
+			&:not(.eom-submenu) {
+				padding-top: 3em;
+			}
+		}
+
+		.eom-menu-item-wrap {
+			position: relative;
+		}
+
+		.eom-menu-item {
+			position: relative;
+			@include flex(left, center, row);
+			padding: 10px 0;
+			color: $menuItemColor;
+			font-size: $menuItemFonSize;
+			text-decoration: none;
+			@include transition(color .3s);
+
+			&:after {
+				@include absolute(auto, 0);
+				bottom: 2px;
+				display: block;
+				width: 100%;
+				max-width: 0;
+				content: " ";
+				border-bottom: 3px solid $hamburgerHoverColor;
+				opacity: 0;
+				@include transition(opacity 0.3s, max-width .3s);
+			}
+
+			&.active,
+			&:hover {
+				color: #fff;
+
+				&:after {
+					max-width: 10%;
+					opacity: 1;
+				}
+			}
+
+			> span {
+				position: relative;
+				display: inline-block;
+			}
+
+			.menu-text {
+				width: calc(100% - #{$arrowWidth});
+			}
+
+			.sub-arrow {
+				width: $arrowWidth;
+				height: 20px;
+				border: 1px solid currentColor;
+
+				&.active {
+
+					i {
+						&:first-child {
+							left: calc(50% - 3px);
+							@include transform(rotate(30deg) translateY(-50%));
+						}
+
+						&:last-child {
+							left: calc(50% + 3px);
+							@include transform(rotate(-30deg) translateY(-50%));
+						}
+					}
+				}
+
+				i {
+					@include absolute(calc(50% - 1px), $left: 50%);
+					display: block;
+					content: " ";
+					height: 7px;
+					border-right: 1px solid currentColor;
+					@include transition(transform 0.4s);
+
+					&:first-child {
+						left: 50%;
+						@include transform(rotate(-30deg) translateY(-50%));
+					}
+
+					&:last-child {
+						left: 50%;
+						@include transform(rotate(30deg) translateY(-50%));
+					}
+				}
+			}
+		}
+
+		/* ==== Submenu ==== */
+
+		.eom-submenu {
+			max-height: 0;
+			padding: 0 0 0 15px;
+			background: $submenuBg;
+			overflow: hidden;
+			@include transition(max-height 0.3s ease-in);
+
+			&.active {
+				max-height: 550px;
+			}
+
+			.eom-menu-item {
+				font-size: $submenuFontSize;
+			}
+		}
+	}
+
+	/* ==== Light Skin ==== */
+	&.eom-light {
+		background: $lightMenuBackground;
+		color: $lightGeneralColor;
+
+		.eom-hamburger-wrap {
+			border: $hamburgerBorderW solid $lightHamburgerColor;
+	
+			span {
+				border-top: $hamburgerBorderW solid $lightHamburgerColor;
+			}
+
+			&:hover {
+				border-color: $lightHamburgerHoverColor;	
+				
+				span {
+					border-color:$lightHamburgerHoverColor;
+				}
+			}
+		}
+
+		.eom-menu-item {
+			color: $lightMenuItemColor;
+
+			&.active,
+			&:hover {
+				color: #000;
+			}
+		}
+
+		.eom-submenu {
+			background: $lightSubmenuBg;
+		}
+	}
+}

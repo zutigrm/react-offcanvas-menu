@@ -1,0 +1,48 @@
+{
+  "name": "react-offcanvas-menu",
+  "version": "1.0.0",
+  "description": "Simple to implement React offcanvas menu ",
+  "main": "./build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --watch",
+    "build": "cross-env NODE_ENV=production webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://githu.com/react-offcanvas-menu"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "react",
+    "menu",
+    "react",
+    "offcanvas",
+    "menu",
+    "react",
+    "hamburger",
+    "menu"
+  ],
+  "author": "Aleksej Vukomanovic",
+  "license": "MIT",
+  "peerDependency": {},
+  "devDependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.4",
+    "@babel/plugin-proposal-class-properties": "^7.5.0",
+    "@babel/preset-env": "^7.5.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-es3-property-literals": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "cross-env": "^5.2.0",
+    "css-loader": "^3.0.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.5"
+  }
+}
