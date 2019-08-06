@@ -65,7 +65,7 @@ export default class OffcanvasMenu extends React.Component {
 		if ( location ) currentPage = location.pathname;
 		
 		return(
-			<MenuContext.Provider value={{...this.state, currentPage, handleSubmenu: this.handleSubmenu, Link, matchPath}}>
+			<MenuContext.Provider value={{...this.state, currentPage, handleSubmenu: this.handleSubmenu, Link}}>
 				<Offcanvas
 					config={config ? config : null}
 					menu={menu} 
