@@ -95,3 +95,8 @@ const Footer = () => {
 // and pass it to the react-offcanvas-menu
 export default withRouter(Menu);
 ```
+
+Than just include your ```Menu``` component into your project.
+
+## License
+MIT
