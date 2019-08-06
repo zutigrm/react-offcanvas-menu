@@ -1,6 +1,6 @@
 {
   "name": "react-offcanvas-menu-component",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple to implement React offcanvas menu ",
   "main": "./build/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "author": "Aleksej Vukomanovic",
   "license": "MIT",
   "peerDependency": {
-	"react": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
