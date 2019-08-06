@@ -1,5 +1,5 @@
 {
-  "name": "react-offcanvas-menu",
+  "name": "react-offcanvas-menu-component",
   "version": "1.0.0",
   "description": "Simple to implement React offcanvas menu ",
   "main": "./build/index.js",
@@ -15,14 +15,11 @@
   "keywords": [
     "react",
     "reactjs",
-    "react",
+    "react-menu",
     "menu",
-    "react",
-    "offcanvas",
-    "menu",
-    "react",
-    "hamburger",
-    "menu"
+    "react-hamburger-menu",
+    "offcanvas-menu",
+    "hamburger-menu"
   ],
   "author": "Aleksej Vukomanovic",
   "license": "MIT",

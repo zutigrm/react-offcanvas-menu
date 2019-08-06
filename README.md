@@ -3,6 +3,17 @@
 React offcanvas menu is "out of the box" solution for adding offcanvas menu to your react project in less than a minute. It comes packed with page "push" effect, unlimited submenus and header and footer sections.
 
 ## Usage
+
+To install offcanvas menu, use:
+
+```npm install --save react-offcanvas-menu-component```
+
+Then include it into your project:
+
+```javascript
+import OffcanvasMenu from 'react-offcanvas-menu-component'; 
+```
+
 You can use react offcanvas menu with router or defualt links. If you want to use it with router you will need to pass 2 additional parameters, otherwise it will fallback to ```<a></a>``` links by default.
 
 React offcanvas menu takes 5 arguments, but only 1 is required. You can provide only menu items and menu is ready to be used. But if you want to add more features, here is the list of all parameters:
@@ -40,7 +51,7 @@ To use router with react offcanvas menu, you need to create a custom component t
 import {Link, withRouter} from 'react-router-dom';
 
 // And you will need react offcanvas menu offcourse :)
-import OffcanvasMenu from 'react-offcanvas-menu'; 
+import OffcanvasMenu from 'react-offcanvas-menu-component'; 
 
 // name you menu component and pass the location parameter 
 // that will be drilled from withRouter
