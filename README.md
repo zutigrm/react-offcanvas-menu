@@ -2,6 +2,10 @@
 
 React offcanvas menu is "out of the box" solution for adding offcanvas menu to your react project in less than a minute. It comes packed with page "push" effect, unlimited submenus and header and footer sections.
 
+[Demo preview](https://zutigrm.github.io/react-offcanvas-menu-example/)
+
+![alt text](https://i.imgur.com/8yXg1qz.gif "Preview")
+
 ## Usage
 
 To install offcanvas menu, use:
@@ -27,6 +31,8 @@ React offcanvas menu takes 5 arguments, but only 1 is required. You can provide 
 
 
 ## Examples
+
+You can also check example and demo app with react offcanvas menu [here](https://github.com/zutigrm/react-offcanvas-menu-example)
 
 basic usage example (quick offcanvas menu with ```<a>``` links system):
 
